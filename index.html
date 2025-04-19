@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager Pro</h1>
+            <div class="stats">
+                <div class="stat-box">
+                    <span id="total-tasks">0</span>
+                    <p>Total Tasks</p>
+                </div>
+                <div class="stat-box">
+                    <span id="completed-tasks">0</span>
+                    <p>Completed</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Enter a new task..." autocomplete="off">
+            <button id="add-task-btn"><i class="fas fa-plus"></i> Add Task</button>
+            <select id="priority-select">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+        </div>
+
+        <div class="filter-area">
+            <button class="filter-btn active" data-filter="all">All Tasks</button>
+            <button class="filter-btn" data-filter="todo">To Do</button>
+            <button class="filter-btn" data-filter="in-progress">In Progress</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <div class="board">
+            <div class="column" id="todo-column">
+                <h2>To Do <span class="counter">0</span></h2>
+                <div class="tasks" id="todo-tasks" data-status="todo"></div>
+            </div>
+            
+            <div class="column" id="in-progress-column">
+                <h2>In Progress <span class="counter">0</span></h2>
+                <div class="tasks" id="in-progress-tasks" data-status="in-progress"></div>
+            </div>
+            
+            <div class="column" id="completed-column">
+                <h2>Completed <span class="counter">0</span></h2>
+                <div class="tasks" id="completed-tasks" data-status="completed"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Task Details</h2>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-task-title">Task Title</label>
+                    <input type="text" id="edit-task-title">
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-description">Description</label>
+                    <textarea id="edit-task-description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-priority">Priority</label>
+                    <select id="edit-task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-due-date">Due Date</label>
+                    <input type="date" id="edit-task-due-date">
+                </div>
+                <button id="save-task-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
