@@ -1,0 +1,11 @@
+let x = 10, y = 3;
+x + y;  // 13 (Addition)
+x - y;  // 7 (Subtraction)
+x * y;  // 30 (Multiplication)
+x / y;  // 3.333... (Division)
+x % y;  // 1 (Modulus/Remainder)
+x ** y; // 1000 (Exponentiation)
+x++;    // 11 (Post-increment)
+++x;    // 12 (Pre-increment)
+x--;    // 11 (Post-decrement)
+--x;    // 10 (Pre-decrement)
